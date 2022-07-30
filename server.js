@@ -2,7 +2,7 @@ const express = require('express');
 const app = express(),
 bodyParser = require("body-parser");
 const util = require('util'); 
-port = 3000;
+port = process.env.PORT || 3000;
 
 const request = require('request');
 const { json } = require('express');
@@ -94,6 +94,6 @@ app.get('/cases-stats', async (req, res) => {
   }
 });
 
-app.listen(process.env.PORT || port, () => {
-    console.log(`Server listening on the port::${process.env.PORT || port}`);
+app.listen(port, () => {
+    console.log(`Server listening on the port::${port}`);
 });
