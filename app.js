@@ -10,6 +10,11 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+var server_port = process.env.PORT || 5000;
+var server_host = '0.0.0.0';
+app.listen(server_port, server_host, function() {
+    console.log('Listening on port %d', server_port);
+});
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
