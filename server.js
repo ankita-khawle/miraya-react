@@ -94,6 +94,6 @@ app.get('/cases-stats', async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-    console.log(`Server listening on the port::${port}`);
+app.listen(process.env.PORT || port, () => {
+    console.log(`Server listening on the port::${process.env.PORT || port}`);
 });
