@@ -101,6 +101,6 @@ app.listen(port, () => {
 });
 
 
-server.listen(server_port, server_host, function() {
+app.listen(server_port, server_host, function() {
     console.log('Listening on port %d', server_port);
 });
