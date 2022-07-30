@@ -29,9 +29,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/users', usersRouter);
 // to let express know the build dir to run 
 app.use(express.static(path.join(__dirname, 'build')));
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(publicPath, 'index.html'));
+// });
 
 // app.get('/compare', (req, res) => {
 //   res.sendFile(path.join(__dirname, 'build', 'index.html'));
