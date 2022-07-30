@@ -3,6 +3,8 @@ const app = express(),
 bodyParser = require("body-parser");
 const util = require('util'); 
 port = process.env.PORT || 5000;
+var server_port = process.env.PORT || 5000 || 80;
+var server_host = '0.0.0.0';
 
 const request = require('request');
 const { json } = require('express');
@@ -96,4 +98,9 @@ app.get('/cases-stats', async (req, res) => {
 
 app.listen(port, () => {
     console.log(`Server listening on the port::${port}`);
+});
+
+
+server.listen(server_port, server_host, function() {
+    console.log('Listening on port %d', server_port);
 });
